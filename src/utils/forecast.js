@@ -4,7 +4,7 @@ const forecast = (lat, lon, callback) => {
 
     axios.get(url).then(res => {
         const {temp, feels_like,humidity}= res.data.main
-        callback(undefined, "it is currently "+temp+" degrees out, feels like "+feels_like+" degrees. humifity at "+humidity+"%.")
+        callback(undefined, "it is currently "+temp+" degrees out, feels like "+feels_like+" degrees. humidity at "+humidity+"%.")
     }).catch(error => {
         if (error.response !== undefined) {
             callback("unable to find location", undefined)
